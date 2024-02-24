@@ -5,18 +5,22 @@ import BotonPropio from '../components/BotonPropio'
 
 const Home = ({setHome}) => {
   return (
-    <View>
-      <Cabecera/> 
-      <BotonPropio
-            nombre={"Mis plantas"}
-            colorFondo={"#5DC966"}
-            onPress={() => {setHome(true)}}
-            />
+    <View style = {styles.container}>
+      <Cabecera/>
+      
         <BotonPropio
-            nombre={"+ Info"}
-            colorFondo={"#5DC966"}
-            onPress={() => {console.log("+ info")}}
-            />
+              nombre={"Mis plantas"}
+              colorFondo={"#5DC966"}
+              onPress={() => {setHome(true)}}
+              />
+        <BotonPropio
+              nombre={"+ Info"}
+              colorFondo={"#5DC966"}
+              onPress={() => {console.log("+ info")}}
+              />
+
+    
+      
     </View>
   )
 }
@@ -29,7 +33,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#CAF0E6',
         alignItems: 'center',
         justifyContent: "flex-start",
-        gap:10,
-    
+        gap:20,
       },
+      
 })

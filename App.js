@@ -1,7 +1,7 @@
 /* import { StatusBar } from 'expo-status-bar'; */
 import { useState } from 'react';
 import uuid from 'react-native-uuid'
-import { Modal,StyleSheet, Text, View, Dimensions, SafeAreaView } from 'react-native';
+import { StatusBar,useWindowDimensions,Modal,StyleSheet, Text, View, Dimensions, SafeAreaView } from 'react-native';
 import ModalBorrarTarea from './src/components/ModalBorrarTarea';
 import AgregarTarea from './src/components/AgregarTarea';
 import ListaTareas from './src/components/ListaTareas';
@@ -9,8 +9,11 @@ import Cabecera from './src/components/Cabecera';
 import ColeccionScreen from './src/Screens/ColeccionScreen';
 import Home from './src/Screens/Home';
 import ItemScreen from './src/Screens/ItemScreen';
-
+// import {useFonts} from "expo-font"
+// import { fontCollection } from './src/utils/globals/fonts'
 const  App = () => {
+  // const [fontsLoaded] = useFonts(fontCollection)
+  const {width} = useWindowDimensions()
   const screenWidth = Dimensions.get('window').width
   const screenHeigth = Dimensions.get('window').height
   const [notHome, setHome] = useState(false);
@@ -45,16 +48,19 @@ const  App = () => {
   const onHandlerModal = (tarea) =>{
     setTareaSelect(tarea)
     setModalVisible(!modalVisible)
+    console.log("onHandlerModal")
     
   }
   const onHandlerDetalle = (item) =>{
     console.log(item)
     setItemDetalle(item)
+    console.log("setItemDetalle")
     
   }
   const borrarTarea = () =>{
     setArrTarea(arrTarea.filter(tareita => tareita.id != tareaSelect.id))
     setModalVisible(!modalVisible)
+    console.log("borrar tarea")
   }
 
   const completeTask = (id) => {
@@ -63,13 +69,24 @@ const  App = () => {
     }))
   }
 
+  // if(!fontsLoaded) return null
+
   return (
-    <View style={styles.container}>
+    <>
+    <StatusBar/>
+      <View style={styles.container}>
       {notHome ? 
-        itemScreen ? 
+        (itemScreen ? 
         <ItemScreen 
         setItemScreen={seItemScreen}
         itemDetalle = {itemDetalle}
+        onHandlerModal={onHandlerModal}
+        modalVisible = {modalVisible}
+          tareaSelect = {tareaSelect}
+          borrarTarea = {borrarTarea}
+          setHome={setHome}
+          setItemDetalle={setItemDetalle}
+          
         /> :
         <ColeccionScreen
         tareaTitle= {tareaTitle} 
@@ -88,7 +105,7 @@ const  App = () => {
         setHome={setHome}
         seItemScreen = {seItemScreen} 
         onHandlerDetalle = {onHandlerDetalle}
-        /> : 
+        /> ): 
         <Home setHome={setHome}/> 
 
       }
@@ -138,6 +155,8 @@ const  App = () => {
       />
  */}
     </View>
+    </>
+    
   );
 }
 export default App
@@ -149,8 +168,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: "flex-start",
     gap:10,
-
   },
-  
   
 });

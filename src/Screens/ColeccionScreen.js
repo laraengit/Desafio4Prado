@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "flex-start",
         gap:10,
+        
     
       },
 })

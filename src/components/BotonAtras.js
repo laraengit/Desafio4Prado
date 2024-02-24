@@ -8,11 +8,20 @@ const BotonAtras = ({colorFondo,onPress}) => {
   return (
     <Pressable style={[styles.boton,{backgroundColor:colorFondo}]} onPress={onPress}>
         {/* <BsChevronLeft  /> */}
-        <Text>Atrás</Text>
+        <Text style={styles.textBoton}>Atrás</Text>
     </Pressable>
   )
 }
 
 export default BotonAtras
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  boton:{
+    borderRadius:5,
+    paddingVertical: 5,
+    paddingHorizontal:10
+    },
+  textBoton:{
+      color: 'white',
+    }
+})

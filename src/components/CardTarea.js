@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     
         color: 'white',
         fontSize:18,
-        margin: 20,
+        margin: 10,
         padding:10,
         
 
