@@ -2,16 +2,17 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Cabecera from '../components/Cabecera'
 import BotonPropio from '../components/BotonPropio'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-const Home = ({setHome}) => {
+const Home = ({navigation}) => {
   return (
     <View style = {styles.container}>
-      <Cabecera/>
+      
       
         <BotonPropio
               nombre={"Mis plantas"}
               colorFondo={"#5DC966"}
-              onPress={() => {setHome(true)}}
+              onPress={() => {navigation.navigate("Mis plantas")}}
               />
         <BotonPropio
               nombre={"+ Info"}
@@ -32,8 +33,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#CAF0E6',
         alignItems: 'center',
-        justifyContent: "flex-start",
-        gap:20,
+        justifyContent: "center",
+        gap:30,
       },
       
 })

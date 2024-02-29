@@ -2,6 +2,8 @@ import { StyleSheet, TextInput, View, Button, Text } from 'react-native'
 import React from 'react'
 import BotonPropio from './BotonPropio'
 const AgregarTarea = ({tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, screenWidth }) => {
+  
+  
   return (
     <View style={[styles.inputContainer,{width:screenWidth-70}]}>
         <Text>Agregar planta</Text>

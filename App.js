@@ -9,15 +9,19 @@ import Cabecera from './src/components/Cabecera';
 import ColeccionScreen from './src/Screens/ColeccionScreen';
 import Home from './src/Screens/Home';
 import ItemScreen from './src/Screens/ItemScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import MainNavigator from './src/navigation/MainNavigator';
 // import {useFonts} from "expo-font"
 // import { fontCollection } from './src/utils/globals/fonts'
 const  App = () => {
   // const [fontsLoaded] = useFonts(fontCollection)
-  const {width} = useWindowDimensions()
-  const screenWidth = Dimensions.get('window').width
-  const screenHeigth = Dimensions.get('window').height
-  const [notHome, setHome] = useState(false);
-  const [itemScreen, seItemScreen] = useState(false);
+  // const Stack = createNativeStackNavigator()
+  // const {width} = useWindowDimensions()
+  // const screenWidth = Dimensions.get('window').width
+  // const screenHeigth = Dimensions.get('window').height
+  // const [notHome, setHome] = useState(false);
+  // const [itemScreen, seItemScreen] = useState(false);
   const [itemDetalle, setItemDetalle] = useState({})
   const [modalVisible, setModalVisible] = useState(false);
   const [tareaSelect, setTareaSelect] = useState({})
@@ -73,91 +77,13 @@ const  App = () => {
 
   return (
     <>
-    <StatusBar/>
-      <View style={styles.container}>
-      {notHome ? 
-        (itemScreen ? 
-        <ItemScreen 
-        setItemScreen={seItemScreen}
-        itemDetalle = {itemDetalle}
-        onHandlerModal={onHandlerModal}
-        modalVisible = {modalVisible}
-          tareaSelect = {tareaSelect}
-          borrarTarea = {borrarTarea}
-          setHome={setHome}
-          setItemDetalle={setItemDetalle}
-          
-        /> :
-        <ColeccionScreen
-        tareaTitle= {tareaTitle} 
-        onHandlerTitle= {onHandlerTitle}
-        tareaDesc= {tareaDesc} 
-        onHandlerDesc= {onHandlerDesc}
-        agregarTarea= {agregarTarea}
-        screenWidth={screenWidth}
-        arrTarea = {arrTarea}
-        onHandlerModal = {onHandlerModal}
-        completeTask={completeTask}
-        screenHeigth = {screenHeigth}
-        modalVisible = {modalVisible}
-        tareaSelect = {tareaSelect}
-        borrarTarea = {borrarTarea}
-        setHome={setHome}
-        seItemScreen = {seItemScreen} 
-        onHandlerDetalle = {onHandlerDetalle}
-        /> ): 
-        <Home setHome={setHome}/> 
-
-      }
-
-      
-      
-      {/* <ColeccionScreen
-        tareaTitle= {tareaTitle} 
-        onHandlerTitle= {onHandlerTitle}
-        tareaDesc= {tareaDesc} 
-        onHandlerDesc= {onHandlerDesc}
-        agregarTarea= {agregarTarea}
-        screenWidth={screenWidth}
-        arrTarea = {arrTarea}
-        onHandlerModal = {onHandlerModal}
-        completeTask={completeTask}
-        screenHeigth = {screenHeigth}
-        modalVisible = {modalVisible}
-        tareaSelect = {tareaSelect}
-        borrarTarea = {borrarTarea}
-      /> */}
-      {/* <Cabecera/>
-      <AgregarTarea
-        tareaTitle= {tareaTitle} 
-        onHandlerTitle= {onHandlerTitle}
-        tareaDesc= {tareaDesc} 
-        onHandlerDesc= {onHandlerDesc}
-        agregarTarea= {agregarTarea}
-        screenWidth={screenWidth}
-      
-      />
-       
-      <ListaTareas
-        arrTarea = {arrTarea}
-        onHandlerModal = {onHandlerModal}
-        completeTask={completeTask}
-        screenWidth={screenWidth}
-        screenHeigth = {screenHeigth}
-      />
-      
-      
-      <ModalBorrarTarea
-        modalVisible = {modalVisible}
-        tareaSelect = {tareaSelect}
-        borrarTarea = {borrarTarea}
-        onHandlerModal = {onHandlerModal}
-      />
- */}
-    </View>
+      <StatusBar/>
+      <MainNavigator/>
+    
     </>
     
-  );
+    
+  )
 }
 export default App
 
