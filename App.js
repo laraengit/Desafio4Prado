@@ -18,8 +18,8 @@ const  App = () => {
   // const [fontsLoaded] = useFonts(fontCollection)
   // const Stack = createNativeStackNavigator()
   // const {width} = useWindowDimensions()
-  // const screenWidth = Dimensions.get('window').width
-  // const screenHeigth = Dimensions.get('window').height
+  const screenWidth = Dimensions.get('window').width
+  const screenHeigth = Dimensions.get('window').height
   // const [notHome, setHome] = useState(false);
   // const [itemScreen, seItemScreen] = useState(false);
   const {height, width, scale, fontScale} = useWindowDimensions()
@@ -77,11 +77,31 @@ const  App = () => {
   // if(!fontsLoaded) return null
 
   return (
-
-
+    <>
     
-      <MainNavigator/>
+      <StatusBar/>
+    
+      <MainNavigator
+        tareaTitle={tareaTitle}
+        onHandlerTitle = {onHandlerTitle}
+        tareaDesc = {tareaDesc}
+        onHandlerDesc= {onHandlerDesc}
+        agregarTarea ={agregarTarea}
+        screenWidth = {screenWidth}
+        arrTarea = {arrTarea}
+        onHandlerModal = {onHandlerModal}
+        completeTask = {completeTask} 
+        screenHeigth = {screenHeigth}
+        tareaSelect = {tareaSelect}
+        borrarTarea = {borrarTarea}
+        modalVisible = {modalVisible}
+        onHandlerDetalle = {onHandlerDetalle}
+      
+      />
 
+      
+    
+    </>
     
     
   )

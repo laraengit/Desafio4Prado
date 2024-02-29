@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Cabecera from '../components/Cabecera'
-import AgregarTareas from '../components/AgregarTarea'
+import AgregarTarea from '../components/AgregarTarea'
 import ListaTareas from '../components/ListaTareas'
 import ModalBorrarTarea from '../components/ModalBorrarTarea'
 import BotonAtras from '../components/BotonAtras'
@@ -17,7 +17,7 @@ const ColeccionScreen = ({navigation, route}) => {
             colorFondo={"#5DC966"}
             onPress={() => {navigation.goBack()}}
             />
-      <AgregarTareas
+      <AgregarTarea
         tareaTitle= {tareaTitle} 
         onHandlerTitle= {onHandlerTitle}
         tareaDesc= {tareaDesc} 
