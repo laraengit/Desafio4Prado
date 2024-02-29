@@ -6,16 +6,27 @@ import BotonAtras from './BotonAtras'
 const Cabecera = ({titulo, navigation, route}) => {
   return (
     <View style = {styles.cabecera}>
+      {route.name === "Inicio" ? 
       <View style={styles.flexCabecera}>
-        {route.name === "Mis plantas" ? <BotonAtras
+        
+      <Text style={styles.txtCabecera}>{titulo}</Text>
+       <Image style = {styles.imgCabecera} source={require('../../assets/logo.png')} />
+
+    </View>
+      
+      : 
+      
+      <View style={styles.flexCabecera}>
+        
+        <BotonAtras
         colorFondo = {"#A5D6AF"}
         onPress = {() =>{navigation.goBack()}}
-        /> : ""}
-        
+        />
         <Text style={styles.txtCabecera}>{titulo}</Text>
          <Image style = {styles.imgCabecera} source={require('../../assets/logo.png')} />
 
-      </View>
+      </View>}
+      
       
     </View>
   )
