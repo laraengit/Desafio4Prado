@@ -7,11 +7,11 @@ import ModalBorrarTarea from '../components/ModalBorrarTarea'
 import BotonAtras from '../components/BotonAtras'
 import { BsChevronLeft  } from "react-icons/bs";
 /* Este screen es el análogo de cómo quedó la entrega 2 */
-const ColeccionScreen = ({navigation, tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, screenWidth,
-    arrTarea,onHandlerModal, completeTask, screenHeigth, tareaSelect,borrarTarea,modalVisible, setHome,seItemScreen, onHandlerDetalle}) => {
+const ColeccionScreen = ({navigation, route}) => {
+  const {tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, screenWidth,
+    arrTarea,onHandlerModal, completeTask, screenHeigth, tareaSelect,borrarTarea,modalVisible, onHandlerDetalle} = route.params
   return (
     <View style = {styles.container}>
-      <Cabecera/>
       
       <BotonAtras
             colorFondo={"#5DC966"}
@@ -29,16 +29,17 @@ const ColeccionScreen = ({navigation, tareaTitle, onHandlerTitle,tareaDesc, onHa
        
       <ListaTareas
         arrTarea = {arrTarea}
+        navigation={navigation}
         onHandlerModal = {onHandlerModal}
         completeTask={completeTask}
         screenWidth={screenWidth}
         screenHeigth = {screenHeigth}
-        seItemScreen = {seItemScreen}
         onHandlerDetalle = {onHandlerDetalle}
       />
       
       
       <ModalBorrarTarea
+      navigation={navigation}
         modalVisible = {modalVisible}
         tareaSelect = {tareaSelect}
         borrarTarea = {borrarTarea}

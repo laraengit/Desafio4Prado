@@ -12,7 +12,7 @@ const Home = ({navigation}) => {
         <BotonPropio
               nombre={"Mis plantas"}
               colorFondo={"#5DC966"}
-              onPress={() => {navigation.navigate("Mis plantas")}}
+              onPress={() => {navigation.navigate("Mis plantas",{})}}
               />
         <BotonPropio
               nombre={"+ Info"}

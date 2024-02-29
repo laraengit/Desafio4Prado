@@ -8,7 +8,6 @@ import ModalBorrarTarea from '../components/ModalBorrarTarea'
 const ItemScreen = ({modalVisible, tareaSelect, borrarTarea, setItemScreen,itemDetalle,onHandlerModal, setHome, setItemDetalle}) => {
   return (
     <View style={styles.container}>
-      <Cabecera/>
       <BotonAtras
             colorFondo={"#5DC966"}
             onPress={() => {setItemScreen(false)}}

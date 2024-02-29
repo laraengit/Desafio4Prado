@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Button, Switch } from 'react-native'
 import React from 'react'
 import BotonPropio from './BotonPropio'
 
-const CardTarea = ({item, onHandlerModal, completeTask, screenWidth, screenHeigth, seItemScreen, onHandlerDetalle}) => {
+const CardTarea = ({navigation,item, onHandlerModal, completeTask, screenWidth, screenHeigth, onHandlerDetalle}) => {
   return (
     <View style = {[styles.card,{width:screenWidth -70,height:screenHeigth -550}]}>
         <View style = {styles.cabeceraCard}>
@@ -23,7 +23,7 @@ const CardTarea = ({item, onHandlerModal, completeTask, screenWidth, screenHeigt
             <BotonPropio
                 nombre={"Ver detalle"}
                 colorFondo={"#F5A69E"}
-                onPress={() => {onHandlerDetalle(item),seItemScreen(true)}}
+                onPress={() => {navigation.navigate("Detalle")}}
             />
         </View>
         

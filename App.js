@@ -22,6 +22,7 @@ const  App = () => {
   // const screenHeigth = Dimensions.get('window').height
   // const [notHome, setHome] = useState(false);
   // const [itemScreen, seItemScreen] = useState(false);
+  const {height, width, scale, fontScale} = useWindowDimensions()
   const [itemDetalle, setItemDetalle] = useState({})
   const [modalVisible, setModalVisible] = useState(false);
   const [tareaSelect, setTareaSelect] = useState({})
@@ -76,11 +77,11 @@ const  App = () => {
   // if(!fontsLoaded) return null
 
   return (
-    <>
-      <StatusBar/>
-      <MainNavigator/>
+
+
     
-    </>
+      <MainNavigator/>
+
     
     
   )
