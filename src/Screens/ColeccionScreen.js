@@ -6,24 +6,55 @@ import ListaTareas from '../components/ListaTareas'
 import ModalBorrarTarea from '../components/ModalBorrarTarea'
 import BotonAtras from '../components/BotonAtras'
 import { BsChevronLeft  } from "react-icons/bs";
+import { useState } from 'react';
 /* Este screen es el análogo de cómo quedó la entrega 2 */
 const ColeccionScreen = ({navigation, route}) => {
-  const {tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, screenWidth,
-    arrTarea,onHandlerModal, completeTask, screenHeigth, tareaSelect,borrarTarea,modalVisible, onHandlerDetalle} = route.params
+  const {/* tareaTitle, onHandlerTitle, *//* tareaDesc, onHandlerDesc, *//* agregarTarea, */ screenWidth,
+    /* arrTarea, *//* onHandlerModal, */ /* completeTask, */ screenHeigth, /* tareaSelect, *//* borrarTarea, *//* modalVisible, */ /* onHandlerDetalle */} = route.params
+    const [arrTarea,setArrTarea] = useState([])
+    const [modalVisible, setModalVisible] = useState(false);
+    const [tareaSelect, setTareaSelect] = useState({})
+    const [itemDetalle, setItemDetalle] = useState({})
+    const onHandlerModal = (tarea) =>{
+      setTareaSelect(tarea)
+      setModalVisible(!modalVisible)
+      
+      console.log("onHandlerModal")
+      
+    }
+    const completeTask = (id) => {
+      setArrTarea(arrTarea.map(tarea => {
+        if(tarea.id===id) return {...tarea,completed:!tarea.completed}
+      }))
+    }
+    const borrarTarea = () =>{
+      setArrTarea(arrTarea.filter(tareita => tareita.id != tareaSelect.id))
+      setModalVisible(!modalVisible)
+      console.log("borrar tarea")
+    }
+    const onHandlerDetalle = (item) =>{
+      console.log(item)
+      setItemDetalle(item)
+      console.log("setItemDetalle")
+      
+    }
   return (
     <View style = {styles.container}>
       
-      <BotonAtras
+      {/* <BotonAtras
             colorFondo={"#5DC966"}
             onPress={() => {navigation.goBack()}}
-            />
+            /> */}
       <AgregarTarea
-        tareaTitle= {tareaTitle} 
-        onHandlerTitle= {onHandlerTitle}
-        tareaDesc= {tareaDesc} 
-        onHandlerDesc= {onHandlerDesc}
-        agregarTarea= {agregarTarea}
+        /* tareaTitle= {tareaTitle} 
+        onHandlerTitle= {onHandlerTitle} */
+        /* tareaDesc= {tareaDesc} 
+        onHandlerDesc= {onHandlerDesc} */
+        /* agregarTarea= {agregarTarea} */
+
         screenWidth={screenWidth}
+        setArrTarea={setArrTarea}
+        arrTarea={arrTarea}
       
       />
        
@@ -41,6 +72,7 @@ const ColeccionScreen = ({navigation, route}) => {
       <ModalBorrarTarea
       navigation={navigation}
         modalVisible = {modalVisible}
+        setModalVisible={setModalVisible}
         tareaSelect = {tareaSelect}
         borrarTarea = {borrarTarea}
         onHandlerModal = {onHandlerModal}
@@ -58,6 +90,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "flex-start",
         gap:10,
+        
         
     
       },

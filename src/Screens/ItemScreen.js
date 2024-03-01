@@ -5,12 +5,14 @@ import BotonPropio from '../components/BotonPropio'
 import BotonAtras from '../components/BotonAtras'
 import ModalBorrarTarea from '../components/ModalBorrarTarea'
 
-const ItemScreen = ({modalVisible, tareaSelect, borrarTarea, setItemScreen,itemDetalle,onHandlerModal, setHome, setItemDetalle}) => {
+const ItemScreen = ({navigation, route, modalVisible, tareaSelect, borrarTarea, /* itemDetalle, */onHandlerModal}) => {
+  const {itemDetalle} = route.params
+  console.log(itemDetalle)
   return (
     <View style={styles.container}>
       <BotonAtras
             colorFondo={"#5DC966"}
-            onPress={() => {setItemScreen(false)}}
+            onPress={() => {navigation.goBack()}}
             />
         <Text style={styles.nombreTxt}>{itemDetalle.titulo}</Text>
         <Text style={styles.descTxt}>
@@ -25,7 +27,7 @@ const ItemScreen = ({modalVisible, tareaSelect, borrarTarea, setItemScreen,itemD
         <ModalBorrarTarea
           modalVisible = {modalVisible}
           tareaSelect = {tareaSelect}
-          borrarTarea = {() => {setItemScreen(false),console.log("setItemScreen"),setHome(true),console.log("setHome"),borrarTarea}}
+          borrarTarea = {() => {navigation.goBack(),console.log("setItemScreen"),borrarTarea}}
           onHandlerModal = {onHandlerModal}
       />
 

@@ -2,8 +2,8 @@ import { StyleSheet, Text, View, Modal, Button } from 'react-native'
 import React from 'react'
 import BotonPropio from './BotonPropio'
 
-const ModalBorrarTarea = ({navigation,tareaSelect,borrarTarea,onHandlerModal,modalVisible}) => {
-
+const ModalBorrarTarea = ({navigation,tareaSelect,/* borrarTarea, */onHandlerModal,modalVisible, setModalVisible, borrarTarea, }) => {
+    
 
     return (
         <View style = {styles.container}>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     
       },
     modalContainer:{
-        
+        height:500,
         backgroundColor: "#CAF0E6",
         flex:1,
         flexDirection: 'column',

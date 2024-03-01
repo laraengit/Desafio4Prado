@@ -82,20 +82,20 @@ const  App = () => {
       <StatusBar/>
     
       <MainNavigator
-        tareaTitle={tareaTitle}
-        onHandlerTitle = {onHandlerTitle}
-        tareaDesc = {tareaDesc}
-        onHandlerDesc= {onHandlerDesc}
-        agregarTarea ={agregarTarea}
+        /* tareaTitle={tareaTitle} */
+        /* onHandlerTitle = {onHandlerTitle} */
+        /* tareaDesc = {tareaDesc} */
+        /* onHandlerDesc= {onHandlerDesc} */
+        /* agregarTarea ={agregarTarea} */
         screenWidth = {screenWidth}
-        arrTarea = {arrTarea}
-        onHandlerModal = {onHandlerModal}
-        completeTask = {completeTask} 
+        /* arrTarea = {arrTarea} */
+        /* onHandlerModal = {onHandlerModal} */
+       /*  completeTask = {completeTask} */ 
         screenHeigth = {screenHeigth}
-        tareaSelect = {tareaSelect}
-        borrarTarea = {borrarTarea}
-        modalVisible = {modalVisible}
-        onHandlerDetalle = {onHandlerDetalle}
+        /* tareaSelect = {tareaSelect} */
+        /* borrarTarea = {borrarTarea} */
+        /* modalVisible = {modalVisible} */
+        /* onHandlerDetalle = {onHandlerDetalle} */
       
       />
 

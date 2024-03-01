@@ -7,7 +7,7 @@ import Home from '../Screens/Home'
 import ColeccionScreen from '../Screens/ColeccionScreen'
 import ItemScreen from '../Screens/ItemScreen'
 const MainNavigator = ({tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, screenWidth,
-  arrTarea,onHandlerModal, completeTask, screenHeigth, tareaSelect,borrarTarea,modalVisible, onHandlerDetalle}) => {
+  arrTarea,/* onHandlerModal, */ /* completeTask, */ screenHeigth, tareaSelect,/* borrarTarea, *//* modalVisible, */ /* onHandlerDetalle */}) => {
     const Stack = createNativeStackNavigator()
     const {height, width, scale, fontScale} = useWindowDimensions()
   return (
@@ -22,8 +22,8 @@ const MainNavigator = ({tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agre
         }}>
           <Stack.Screen name='Inicio' component={Home}/>
           <Stack.Screen name='Mis plantas' component={ColeccionScreen} initialParams={{tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, screenWidth,
-    arrTarea,onHandlerModal, completeTask, screenHeigth, tareaSelect,borrarTarea,modalVisible, onHandlerDetalle}}/>
-          <Stack.Screen name='Detalle' component={ItemScreen}/> 
+    arrTarea,/* onHandlerModal, */ /* completeTask, */ screenHeigth, /* tareaSelect, *//* borrarTarea, *//* modalVisible, */ /* onHandlerDetalle */}}/>
+          <Stack.Screen name='Detalle' component={ItemScreen} initialParams={{/* modalVisible, tareaSelect, */ /* borrarTarea *//* , itemDetalle *//* ,onHandlerModal */}}/> 
       </Stack.Navigator>
     </NavigationContainer>
   )

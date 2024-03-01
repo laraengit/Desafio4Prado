@@ -3,8 +3,10 @@ import React from 'react'
 import CardTarea from './CardTarea'
 
 const ListaTareas = ({navigation,arrTarea,onHandlerModal, completeTask, screenWidth, screenHeigth, onHandlerDetalle}) => {
+  console.log('ARRAY TAREAS')
+  console.log(arrTarea)
   return (
-    <View style = {[styles.cardContainer,{height:screenHeigth -450}]}>
+    <View style = {[styles.cardContainer,{height:screenHeigth -350}]}>
         <FlatList
           pagingEnabled = {true}
           data={arrTarea}
@@ -29,7 +31,6 @@ export default ListaTareas
 
 const styles = StyleSheet.create({
     cardContainer:{
-      
         justifyContent:"center",
         alignItems:"center",
       },
