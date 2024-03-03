@@ -21,8 +21,8 @@ const MainNavigator = ({tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agre
           }
         }}>
           <Stack.Screen name='Inicio' component={Home}/>
-          <Stack.Screen name='Mis plantas' component={ColeccionScreen} initialParams={{tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, screenWidth,
-    arrTarea,/* onHandlerModal, */ /* completeTask, */ screenHeigth, /* tareaSelect, *//* borrarTarea, *//* modalVisible, */ /* onHandlerDetalle */}}/>
+          <Stack.Screen name='Mis plantas' component={ColeccionScreen} initialParams={{/* tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, */ screenWidth,
+    /* arrTarea, *//* onHandlerModal, */ /* completeTask, */ screenHeigth, /* tareaSelect, *//* borrarTarea, *//* modalVisible, */ /* onHandlerDetalle */}}/>
           <Stack.Screen name='Detalle' component={ItemScreen} initialParams={{/* modalVisible, tareaSelect, */ /* borrarTarea *//* , itemDetalle *//* ,onHandlerModal */}}/> 
       </Stack.Navigator>
     </NavigationContainer>

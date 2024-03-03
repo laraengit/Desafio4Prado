@@ -2,7 +2,10 @@ import { StyleSheet, TextInput, View, Button, Text } from 'react-native'
 import uuid from 'react-native-uuid'
 import { useState } from 'react';
 import BotonPropio from './BotonPropio'
+import { useFonts } from 'expo-font';
+import { fontsColection } from '../utils/fonts';
 const AgregarTarea = ({tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, screenWidth, setArrTarea, arrTarea }) => {
+  const [fontsLoaded] = useFonts(fontsColection)
   /* const [tareaTitle,setTitle] = useState("")
   const [tareaDesc,setDesc] = useState("")
   
@@ -30,7 +33,7 @@ const AgregarTarea = ({tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agreg
   
   return (
     <View style={[styles.inputContainer,{width:screenWidth-70}]}>
-        <Text>Agregar planta</Text>
+        <Text style={styles.tituloInput}>Agregar planta</Text>
         <TextInput value={tareaTitle} placeholder='Nombre' style={styles.input} onChangeText={onHandlerTitle}/>
         <TextInput value={tareaDesc} placeholder='Cuidados' style={styles.input} onChangeText={onHandlerDesc}/>
         <BotonPropio
@@ -54,8 +57,12 @@ const styles = StyleSheet.create({
         padding:10,
         gap:20,
         marginTop:40,
+        
+        
+      },
+      tituloInput:{
         fontFamily:"Montserrat",
-        fontSize:23
+        fontSize:17
       },
       input:{
         width:250,
@@ -65,5 +72,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius:5,
         color:"black",
+        fontFamily:"Lato",
       },
 })

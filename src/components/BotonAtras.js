@@ -1,8 +1,8 @@
 import { StyleSheet, Pressable, Text } from 'react-native'
 import React from 'react'
 import { BsChevronLeft } from "react-icons/bs"
-
-
+import { fontsColection } from '../utils/fonts'
+import { useFonts } from 'expo-font'
 
 const BotonAtras = ({colorFondo,onPress}) => {
   return (
@@ -23,5 +23,6 @@ const styles = StyleSheet.create({
     },
   textBoton:{
       color: 'white',
+      fontFamily:'Lato'
     }
 })

@@ -6,7 +6,7 @@ import BotonAtras from '../components/BotonAtras'
 import ModalBorrarTarea from '../components/ModalBorrarTarea'
 
 const ItemScreen = ({navigation, route, modalVisible, tareaSelect, borrarTarea, /* itemDetalle, */onHandlerModal}) => {
-  const {itemDetalle} = route.params
+
   console.log(itemDetalle)
   return (
     <View style={styles.container}>
