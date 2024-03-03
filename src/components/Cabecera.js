@@ -2,8 +2,10 @@ import { StyleSheet, Text, View, Image, Pressable, Platform, StatusBar} from 're
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 import BotonAtras from './BotonAtras'
-
+import { fontsColection } from '../utils/fonts'
+import { useFonts } from 'expo-font'
 const Cabecera = ({titulo, navigation, route}) => {
+  const [fontsLoaded] = useFonts(fontsColection)
   return (
     <View style = {styles.cabecera}>
       {route.name === "Inicio" ? 

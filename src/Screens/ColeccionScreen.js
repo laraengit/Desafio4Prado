@@ -27,11 +27,15 @@ const ColeccionScreen = ({navigation, route}) => {
       
     }
     const completeTask = (id) => {
-      console.log("completeTask")
+      console.log("Incicio complete Task")
       console.log(id)
       setArrTarea(arrTarea.map(tarea => {
+        console.log(tarea)
         if(tarea.id===id) return {...tarea,completed:!tarea.completed}
       }))
+      console.log(arrTarea)
+      console.log("fin complete Task")
+      
     }
     const borrarTarea = () =>{
       console.log("Borrar tarea")
@@ -92,7 +96,7 @@ const ColeccionScreen = ({navigation, route}) => {
       />
        
       <ListaTareas
-        arrTarea = {arrTarea}
+        arrTarea = {Object.assign([],arrTarea)}
         navigation={navigation}
         onHandlerModal = {onHandlerModal}
         completeTask={completeTask}

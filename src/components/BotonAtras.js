@@ -5,6 +5,7 @@ import { fontsColection } from '../utils/fonts'
 import { useFonts } from 'expo-font'
 
 const BotonAtras = ({colorFondo,onPress}) => {
+  const [fontsLoaded] = useFonts(fontsColection)
   return (
     <Pressable style={[styles.boton,{backgroundColor:colorFondo}]} onPress={onPress}>
         {/* <BsChevronLeft  /> */}

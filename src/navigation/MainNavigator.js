@@ -6,8 +6,13 @@ import Cabecera from '../components/Cabecera'
 import Home from '../Screens/Home'
 import ColeccionScreen from '../Screens/ColeccionScreen'
 import ItemScreen from '../Screens/ItemScreen'
+import PlantasDict from '../Screens/PlantasDict'
+import DetalleScreen from '../Screens/DetalleScreen'
+import { fontsColection } from '../utils/fonts'
+import { useFonts } from 'expo-font'
 const MainNavigator = ({tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, screenWidth,
   arrTarea,/* onHandlerModal, */ /* completeTask, */ screenHeigth, tareaSelect,/* borrarTarea, *//* modalVisible, */ /* onHandlerDetalle */}) => {
+    const [fontsLoaded] = useFonts(fontsColection)
     const Stack = createNativeStackNavigator()
     const {height, width, scale, fontScale} = useWindowDimensions()
   return (
@@ -23,7 +28,9 @@ const MainNavigator = ({tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agre
           <Stack.Screen name='Inicio' component={Home}/>
           <Stack.Screen name='Mis plantas' component={ColeccionScreen} initialParams={{/* tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, */ screenWidth,
     /* arrTarea, *//* onHandlerModal, */ /* completeTask, */ screenHeigth, /* tareaSelect, *//* borrarTarea, *//* modalVisible, */ /* onHandlerDetalle */}}/>
-          <Stack.Screen name='Detalle' component={ItemScreen} initialParams={{/* modalVisible, tareaSelect, */ /* borrarTarea *//* , itemDetalle *//* ,onHandlerModal */}}/> 
+          <Stack.Screen name='Detalle' component={ItemScreen} initialParams={{/* modalVisible, tareaSelect, */ /* borrarTarea *//* , itemDetalle *//* ,onHandlerModal */}}/>
+          <Stack.Screen name="Plantas" component={PlantasDict} initialParams={{screenHeigth, screenWidth}}/> 
+          <Stack.Screen name="Detalle planta" component={DetalleScreen} initialParams={{screenHeigth, screenWidth}}/> 
       </Stack.Navigator>
     </NavigationContainer>
   )

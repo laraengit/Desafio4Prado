@@ -1,0 +1,23 @@
+[
+    {   "id":0,
+        "nombre":"Palo de agua",
+        "Riego": "Rociar con agua dos veces a la semana",
+        "Luz":"Natural pero sin sol directo",
+        "Cuidados":"Limpiar periódicamente sus hojas"
+
+    },
+    {   "id":1,
+        "nombre":"Aloe Vera",
+        "Riego": "Riego constante, sin encharcar",
+        "Luz":"Exterior",
+        "Cuidados":"No somenter a temperaturas extremas"
+    },
+    {   "id":2,
+        "nombre":"Calatea",
+        "Riego": "Riego constante, sin encharcar",
+        "Luz":"Exterior",
+        "Cuidados":"No somenter a temperaturas extremas"
+    }
+
+]
+    

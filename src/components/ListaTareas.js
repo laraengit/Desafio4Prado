@@ -3,7 +3,8 @@ import React from 'react'
 import CardTarea from './CardTarea'
 
 const ListaTareas = ({navigation,arrTarea,onHandlerModal, completeTask, screenWidth, screenHeigth, onHandlerDetalle, itemDetalle}) => {
-  console.log('ARRAY TAREAS')
+  console.log('Lista Plantas')
+  console.log('Listado que llegó')
   console.log(arrTarea)
   return (
     <View style = {[styles.cardContainer,{height:screenHeigth -350}]}>
