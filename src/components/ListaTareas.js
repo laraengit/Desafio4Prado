@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, FlatList } from 'react-native'
 import React from 'react'
 import CardTarea from './CardTarea'
 
-const ListaTareas = ({navigation,arrTarea,onHandlerModal, completeTask, screenWidth, screenHeigth, onHandlerDetalle}) => {
+const ListaTareas = ({navigation,arrTarea,onHandlerModal, completeTask, screenWidth, screenHeigth, onHandlerDetalle, itemDetalle}) => {
   console.log('ARRAY TAREAS')
   console.log(arrTarea)
   return (
@@ -20,6 +20,7 @@ const ListaTareas = ({navigation,arrTarea,onHandlerModal, completeTask, screenWi
               screenWidth = {screenWidth}
               screenHeigth = {screenHeigth}
               onHandlerDetalle = {onHandlerDetalle}
+              itemDetalle = {itemDetalle}
             />
           )}
         />

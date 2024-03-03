@@ -12,9 +12,13 @@ import ItemScreen from './src/Screens/ItemScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainNavigator from './src/navigation/MainNavigator';
+import { fontsColection } from './src/utils/fonts';
+import { useFonts } from 'expo-font';
+import { colors } from './src/utils/colors';
 // import {useFonts} from "expo-font"
 // import { fontCollection } from './src/utils/globals/fonts'
 const  App = () => {
+  const [fontsLoaded] = useFonts(fontsColection)
   // const [fontsLoaded] = useFonts(fontCollection)
   // const Stack = createNativeStackNavigator()
   // const {width} = useWindowDimensions()
@@ -111,7 +115,7 @@ export default App
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#CAF0E6',
+    backgroundColor: colors.celeste,
     alignItems: 'center',
     justifyContent: "flex-start",
     gap:10,

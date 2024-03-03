@@ -7,6 +7,8 @@ import ModalBorrarTarea from '../components/ModalBorrarTarea'
 import BotonAtras from '../components/BotonAtras'
 import { BsChevronLeft  } from "react-icons/bs";
 import { useState } from 'react';
+import uuid from 'react-native-uuid'
+
 /* Este screen es el análogo de cómo quedó la entrega 2 */
 const ColeccionScreen = ({navigation, route}) => {
   const {/* tareaTitle, onHandlerTitle, *//* tareaDesc, onHandlerDesc, *//* agregarTarea, */ screenWidth,
@@ -15,6 +17,8 @@ const ColeccionScreen = ({navigation, route}) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [tareaSelect, setTareaSelect] = useState({})
     const [itemDetalle, setItemDetalle] = useState({})
+    const [tareaTitle,setTitle] = useState("")
+    const [tareaDesc,setDesc] = useState("")
     const onHandlerModal = (tarea) =>{
       setTareaSelect(tarea)
       setModalVisible(!modalVisible)
@@ -23,11 +27,14 @@ const ColeccionScreen = ({navigation, route}) => {
       
     }
     const completeTask = (id) => {
+      console.log("completeTask")
+      console.log(id)
       setArrTarea(arrTarea.map(tarea => {
         if(tarea.id===id) return {...tarea,completed:!tarea.completed}
       }))
     }
     const borrarTarea = () =>{
+      console.log("Borrar tarea")
       setArrTarea(arrTarea.filter(tareita => tareita.id != tareaSelect.id))
       setModalVisible(!modalVisible)
       console.log("borrar tarea")
@@ -38,6 +45,32 @@ const ColeccionScreen = ({navigation, route}) => {
       console.log("setItemDetalle")
       
     }
+    
+    const onHandlerTitle = (t) =>{
+      setTitle(t)
+
+    }
+    const onHandlerDesc = (d) =>{
+      setDesc(d)
+    }
+
+    const agregarTarea = () =>{
+
+      const nuevaTarea = {
+        id : uuid.v4(),
+        titulo : tareaTitle,
+        descripcion : tareaDesc,
+        completed:false,
+        createAt: new Date().toLocaleString(),
+        updateAt: new Date().toLocaleString(),
+      }
+      setArrTarea([...arrTarea,nuevaTarea])
+      /* plantas.push(nuevaTarea) */
+      setTitle("")
+      setDesc("")
+      console.log(arrTarea)
+     
+    }
   return (
     <View style = {styles.container}>
       
@@ -46,11 +79,11 @@ const ColeccionScreen = ({navigation, route}) => {
             onPress={() => {navigation.goBack()}}
             /> */}
       <AgregarTarea
-        /* tareaTitle= {tareaTitle} 
-        onHandlerTitle= {onHandlerTitle} */
-        /* tareaDesc= {tareaDesc} 
-        onHandlerDesc= {onHandlerDesc} */
-        /* agregarTarea= {agregarTarea} */
+        tareaTitle= {tareaTitle} 
+        onHandlerTitle= {onHandlerTitle}
+        tareaDesc= {tareaDesc} 
+        onHandlerDesc= {onHandlerDesc}
+        agregarTarea= {agregarTarea}
 
         screenWidth={screenWidth}
         setArrTarea={setArrTarea}
@@ -66,6 +99,7 @@ const ColeccionScreen = ({navigation, route}) => {
         screenWidth={screenWidth}
         screenHeigth = {screenHeigth}
         onHandlerDetalle = {onHandlerDetalle}
+        itemDetalle = {itemDetalle}
       />
       
       

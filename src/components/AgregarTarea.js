@@ -2,18 +2,18 @@ import { StyleSheet, TextInput, View, Button, Text } from 'react-native'
 import uuid from 'react-native-uuid'
 import { useState } from 'react';
 import BotonPropio from './BotonPropio'
-const AgregarTarea = ({/* tareaTitle, onHandlerTitle, *//* tareaDesc, onHandlerDesc, *//* agregarTarea, */ screenWidth, setArrTarea, arrTarea }) => {
-  const [tareaTitle,setTitle] = useState("")
+const AgregarTarea = ({tareaTitle, onHandlerTitle,tareaDesc, onHandlerDesc,agregarTarea, screenWidth, setArrTarea, arrTarea }) => {
+  /* const [tareaTitle,setTitle] = useState("")
   const [tareaDesc,setDesc] = useState("")
   
   const onHandlerTitle = (t) =>{
     setTitle(t)
 
-  }
-  const onHandlerDesc = (d) =>{
+  } */
+  /* const onHandlerDesc = (d) =>{
     setDesc(d)
-  }
-  const agregarTarea = () =>{
+  } */
+  /* const agregarTarea = () =>{
     const nuevaTarea = {
       id : uuid.v4(),
       titulo : tareaTitle,
@@ -26,7 +26,7 @@ const AgregarTarea = ({/* tareaTitle, onHandlerTitle, *//* tareaDesc, onHandlerD
     setTitle("")
     setDesc("")
     console.log(arrTarea)
-  }
+  } */
   
   return (
     <View style={[styles.inputContainer,{width:screenWidth-70}]}>
@@ -53,7 +53,9 @@ const styles = StyleSheet.create({
         borderRadius:5,
         padding:10,
         gap:20,
-        marginTop:40
+        marginTop:40,
+        fontFamily:"Montserrat",
+        fontSize:23
       },
       input:{
         width:250,

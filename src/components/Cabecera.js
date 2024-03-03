@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
       color:"black",
       textAlign:"center",
       backgroundColor: 'white',
+      fontFamily:"Raleway",
       fontSize: 24,
     },
     imgCabecera:{
