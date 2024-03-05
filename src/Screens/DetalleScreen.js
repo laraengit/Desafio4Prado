@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import plantasData from '../utils/data/plantasData.json'
 import { useState, useEffect } from 'react'
+import { colors } from '../utils/colors'
 
 const DetalleScreen = ({route}) => {
     const {idPlanta} = route.params
@@ -14,13 +15,24 @@ const DetalleScreen = ({route}) => {
   },[idPlanta])
   return (
     <View style={styles.container}>
+    {/* <Image style = {styles.imgDetalle} source={require(planta.imagen)}/> */}
+    
       <Text style={styles.nombreTxt}>{planta.nombre}</Text>
+      <Text style={styles.label}>
+        Riego
+      </Text>
         <Text style={styles.descTxt}>
           {planta.Riego}
         </Text>
+        <Text style={styles.label}>
+        Luz
+      </Text>
         <Text style={styles.descTxt}>
           {planta.Luz}
         </Text>
+        <Text style={styles.label}>
+        Otros cuidados
+      </Text>
         <Text style={styles.descTxt}>
           {planta.Cuidados}
         </Text>
@@ -37,27 +49,42 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: "flex-start",
       gap:5,
+      
   
+    },
+    imgDetalle:{
+        width:280,
+        resizeMode:"cover"
+
+
+    },
+    label:{
+        textAlign:"left",
+        fontFamily:'Montserrat',
+        width:280,
+        borderRadius:8,
+        backgroundColor:colors.VerdeClaro,
+        padding:5
     },
       nombreTxt:{
           color: 'white',
           fontSize:18,
-          margin: 10,
+          margin: 20,
           padding:10,
           textAlign: "center",
           borderRadius:8,
           backgroundColor:'#2B8A62',
-          width:250,
+          width:280,
       },
       descTxt:{
         color: '#0C2821',
         fontSize:15,
         margin: 22,
         padding:10,
-        textAlign: "justify",
+        textAlign: "center",
         borderRadius:8,
         backgroundColor:'white',
-        width:250,
-        height:100,
+        width:280,
+        height:"auto",
     }
   })

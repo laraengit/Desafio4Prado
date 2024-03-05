@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import BotonPropio from './BotonPropio'
 import { fontsColection } from '../utils/fonts'
@@ -8,11 +8,12 @@ import { colors } from '../utils/colors'
 const CardPlanta = ({navigation,item, screenHeigth, screenWidth}) => {
     const [fontsLoaded] = useFonts(fontsColection)
     return (
-    <View style = {[styles.card,{width:screenWidth -70,height:screenHeigth -450}]}>
+    <View style = {[styles.card,{width:screenWidth -70,height:screenHeigth -750}]}>
+        
       <Text style = {styles.textTitle} >{item.nombre}</Text>
       <BotonPropio
                 nombre={"Ver detalle"}
-                colorFondo={"#F5A69E"}
+                colorFondo={colors.rosa}
                 onPress={() => {navigation.navigate("Detalle planta",{idPlanta:item.id}) }}
             />
     </View>
@@ -22,16 +23,17 @@ const CardPlanta = ({navigation,item, screenHeigth, screenWidth}) => {
 export default CardPlanta
 const styles = StyleSheet.create({
     card:{
-        flexDirection:"column",
+        flexDirection:"row",
         justifyContent:"space-around",
         alignItems:"center",
-        padding:20,
+        padding:10,
         borderRadius:5,
         backgroundColor:colors.verdeOscuro,
-        gap:30,
+        gap:20,
         margin:40,
 
       },
+      
     textTitle:{
     
         color: 'white',
