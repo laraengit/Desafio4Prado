@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Button, Switch } from 'react-native'
 import React from 'react'
 import BotonPropio from './BotonPropio'
 
-const CardTarea = ({navigation,item, onHandlerModal, completeTask, screenWidth, screenHeigth, onHandlerDetalle, itemDetalle
+const CardTarea = ({navigation,item, onHandlerModal, completeTask, screenWidth, screenHeigth, onHandlerDetalle
 }) => {
   const itemCopy = Object.assign({},itemCopy)
   return (
